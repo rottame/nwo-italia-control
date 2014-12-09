@@ -7,6 +7,7 @@ var app = new EmberApp();
 app.import('bower_components/materialize/bin/materialize.js');
 app.import('bower_components/jquery-color/jquery.color.js');
 app.import('bower_components/jquery-color/jquery.color.svg-names.js');
+app.import('bower_components/moment/moment.js');
 app.import('vendor/navbar_fade.js');
 
 var pickFiles = require('broccoli-static-compiler');

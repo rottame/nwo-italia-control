@@ -6,6 +6,8 @@ Airport = DS.Model.extend
   country: DS.attr()
   latitude: DS.attr('number')
   longitude: DS.attr('number')
+
+Airport.reopenClass
   FIXTURES: [
     {id:   1, name: 'Antwerp International Airport (Deurne)',  longitude: 51.1893997192, latitude: 4.46027994156, country: 'BE', code: 'ANR'}
     {id:   2, name: 'Brussels Airport',  longitude: 50.9014015198, latitude: 4.48443984985, country: 'BE', code: 'BRU'}

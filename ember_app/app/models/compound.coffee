@@ -3,6 +3,8 @@
 Compound = DS.Model.extend
   name: DS.attr()
   purpose: DS.attr()
+
+Compound.reopenClass
   FIXTURES: [
     {id: 1, name: 'barium',       purpose: 'Mind control'}
     {id: 2, name: 'aluminum',     purpose: 'Weather control'}

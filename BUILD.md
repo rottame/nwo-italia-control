@@ -7,6 +7,12 @@
 * ember-cli http://www.ember-cli.com/
 * bower http://bower.io/ 
 
+Android target:
+
+* Java JDK http://www.oracle.com/technetwork/java/javase/downloads/index.html
+* Android SDK http://developer.android.com/sdk/index.html
+* Apache Ant http://ant.apache.org/
+
 ## Build the app
 
 ~~~

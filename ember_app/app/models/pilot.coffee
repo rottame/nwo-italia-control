@@ -5,6 +5,8 @@ Pilot = DS.Model.extend
   id_number: DS.attr('number')
   flights: DS.attr('number')
   photo: DS.attr()
+
+Pilot.reopenClass
   FIXTURES: [
     { id:  1, name: 'Kaci Brennan',         flights: 195, photo: '' }
     { id:  2, name: 'Ai Bracero',           flights:  28, photo: '' }

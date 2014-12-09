@@ -38,4 +38,27 @@
       {{/link-to}}
     </div>
   </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title black-text lighten-1">Chemtrails</span>
+          <hr />
+        {{#each flight in flights}}
+          <span class="card-title black-text lighten-1">
+            {{ flight.origin.code }} → {{ flight.destination.code }}, 
+            {{ format-time flight.take_off }}
+          </span>
+          <p>
+            {{#each compound in flight.compounds }}
+              {{ compound.name }} 
+            {{/each}}
+          </p>
+          <p>Take off {{ time-from-now flight.take_off }}</p>
+        {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

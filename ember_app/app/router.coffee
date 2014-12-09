@@ -11,7 +11,6 @@ Router.map ->
   @route 'vaccines'
   @route 'politics'
   @route 'agents'
-  @route 'hharp'
   @route 'haarp'
 
 `export default Router`

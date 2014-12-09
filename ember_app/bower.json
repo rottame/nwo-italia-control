@@ -14,7 +14,8 @@
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
     "materialize": "*",
-    "jquery-color": "~2.1.2"
+    "jquery-color": "~2.1.2",
+    "moment": "~2.8.4"
   },
   "devDependencies": {}
 }
