@@ -39,24 +39,92 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col s12">
-      <div class="card">
-        <div class="card-content">
-          <span class="card-title black-text lighten-1">Chemtrails</span>
-          <hr />
+  <div class="row no-pad">
+    <div class="col s12 m6">
+      <h4>Chemtrails</h4>
+    </div>
+  </div>
+  
+  <div class="row no-pad">
+    <div class="col s12 l6">
+      <div class="row no-pad">
+        <div class="col s8">
+          <h5>Next sprayings</h5>
+        </div>
+        <div class="col s4 right-align">
+          <a class="btn">More</a>
+        </div>
+      </div>
+      <div class="row">
         {{#each flight in flights}}
-          <span class="card-title black-text lighten-1">
-            {{ flight.origin.code }} → {{ flight.destination.code }}, 
-            {{ format-time flight.take_off }}
-          </span>
-          <p>
-            {{#each compound in flight.compounds }}
-              {{ compound.name }} 
-            {{/each}}
-          </p>
-          <p>Take off {{ time-from-now flight.take_off }}</p>
+        <div class="col s6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title black-text lighten-2">
+                <i class="mdi-device-access-time"></i> {{ format-time flight.take_off }}
+              </span>
+              <br />
+              <span class="card-title black-text lighten-1">
+                <i class="mdi-maps-flight"></i> {{ flight.origin.code }} → {{ flight.destination.code }}
+              </span>
+              <p>
+                Take off {{ time-from-now flight.take_off }}
+              </p>
+              <p>
+                {{#each compound in flight.compounds }}
+                  {{ compound.name }} 
+                {{/each}}
+              </p>
+            </div>
+          </div>
+        </div>
         {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row no-pad">
+    <div class="col s12">
+      <div class="row no-pad">
+        <div class="col s8">
+          <h4>Directives</h4>
+        </div>
+        <div class="col s4 right-align">
+          <a class="btn">More</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <ul class="card collection">
+            <li class="collection-item">
+              <article class="row">
+                <div class="col s2">
+                  <i class="category blue mdi-maps-flight"></i>
+                </div>
+                <div class="col s10">
+                  <header class="row title">
+                    <span class="col s9 title">Lorem ipsum</span>
+                    <small class="col s3 date right-align">25 dec 08:00</small>
+                  </header>
+                  <p class="body-preview">Lorem ipsum dolor sit amet</p>
+                </div>
+              </article>
+            </li>
+            <li class="collection-item">
+              <article class="row">
+                <div class="col s2">
+                  <i class="category amber mdi-device-wifi-tethering"></i>
+                </div>
+                <div class="col s10">
+                  <header class="row title">
+                    <span class="col s9 title">Lorem ipsum</span>
+                    <small class="col s3 date right-align">25 dec 08:00</small>
+                  </header>
+                  <p class="body-preview">Lorem ipsum dolor sit amet</p>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

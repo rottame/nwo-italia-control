@@ -2,6 +2,6 @@
 
 IndexRoute = Ember.Route.extend
   setupController: ->
-    @controller.set 'flights', this.store.find('flight', {query: [['take_off', 'gte', new Date]], order: ['take_off'], limit: 3})
+    @controller.set 'flights', this.store.find('flight', {query: [['take_off', 'gte', new Date]], order: ['take_off'], limit: 2})
 
 `export default IndexRoute`

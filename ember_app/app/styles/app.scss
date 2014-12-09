@@ -85,3 +85,45 @@ section.with-header-image {
     }
   }
 }
+
+.row {
+  &.no-pad {
+    margin-bottom: 0;
+
+    h1, h2, h3, h4, h5, h6, .btn {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+article {
+  &.row {
+    margin-bottom: 0;
+  }
+
+  header.row.title {
+    margin-bottom: 0;
+    .title {
+      font-size: 120%;
+    }
+
+    + p {
+      margin-top: 3px;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .category {
+    display: block;
+    width: 53px;
+    height: 53px;
+    line-height: 53px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+  }
+}
