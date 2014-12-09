@@ -1,0 +1,87 @@
+@import "../../bower_components/materialize/sass/materialize";
+
+nav {
+  .brand-logo {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1.4rem;
+    width: calc(100% - 20px)
+  }
+}
+
+.container {
+  width: 90%;
+}
+
+header {
+  &.fixed {
+    height: 64px;
+
+    nav {
+      position: fixed;
+      top: 0;
+      z-index: 2;
+    }
+  }
+
+  &.fade-in {
+    height: 0; 
+    nav {
+      box-shadow: none;
+      opacity: 0;
+    }
+  }
+}
+
+section.with-header-image {
+  perspective: 1px;
+  perspective-origin: top left;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  z-index: 0;
+
+  > * {
+    &.header-image {
+      transform: translateZ(-1px) scale(2);
+      transform-origin: top left;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        content: "";
+        display: block;
+        margin-top: 52.5%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      transform: translateZ(0);
+    }
+  }
+}
+
+
+.home-buttons {
+  .btn {
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    i.left {
+      margin-right: 6px;
+    }
+  }
+}
