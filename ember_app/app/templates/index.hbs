@@ -8,33 +8,33 @@
 <section class="container">
   <div class="row home-buttons">
     <div class="col s6 m4">
-      {{#link-to 'chemtrails' class="btn waves-effect waves-light blue"}}
-        <i class="mdi-maps-flight left"></i> Chemtrails
+      {{#link-to 'chemtrails' class="btn waves-effect waves-light chemtrails"}}
+        <i class="{{ unbound category-icon 'chemtrails' }} left"></i> Chemtrails
       {{/link-to}}
     </div>
     <div class="col s6 m4">
-      {{#link-to 'haarp' class="btn waves-effect waves-light amber"}}
-        <i class="mdi-device-wifi-tethering left"></i> HAARP
+      {{#link-to 'haarp' class="btn waves-effect waves-light haarp"}}
+        <i class="{{ unbound category-icon 'haarp' }} left"></i> HAARP
       {{/link-to}}
     </div>
     <div class="col s6 m4">
-      {{#link-to 'seigniorage' class="btn waves-effect waves-light green"}}
-        <i class="mdi-editor-attach-money"></i> Seignorage
+      {{#link-to 'seigniorage' class="btn waves-effect waves-light seignorage"}}
+        <i class="{{ unbound category-icon 'seignorage' }} left"></i> Seignorage
       {{/link-to}}
     </div>
     <div class="col s6 m4">
-      {{#link-to 'vaccines' class="btn waves-effect waves-light red"}}
-        <i class="mdi-maps-local-hospital left"></i> Vaccines
+      {{#link-to 'vaccines' class="btn waves-effect waves-light vaccines"}}
+        <i class="{{ unbound category-icon 'vaccines' }} left"></i> Vaccines
       {{/link-to}}
     </div>
     <div class="col s6 m4">
-      {{#link-to 'politics' class="btn waves-effect waves-light brown"}}
-        <i class="mdi-social-group left"></i> Politics
+      {{#link-to 'politics' class="btn waves-effect waves-light politics"}}
+        <i class="{{ unbound category-icon 'politics' }} left"></i> Politics
       {{/link-to}}
     </div>
     <div class="col s6 m4">
-      {{#link-to 'mind-control' class="btn waves-effect waves-light lime"}}
-        <i class="mdi-action-visibility-off left"></i> Mind Control
+      {{#link-to 'mind-control' class="btn waves-effect waves-light mind-control"}}
+        <i class="{{ unbound category-icon 'mind-control' }} left"></i> Mind Control
       {{/link-to}}
     </div>
   </div>
@@ -56,29 +56,32 @@
         </div>
       </div>
       <div class="row">
-        {{#each flight in flights}}
-        <div class="col s6">
-          <div class="card">
-            <div class="card-content">
-              <span class="card-title black-text lighten-2">
-                <i class="mdi-device-access-time"></i> {{ format-time flight.take_off }}
-              </span>
-              <br />
-              <span class="card-title black-text lighten-1">
-                <i class="mdi-maps-flight"></i> {{ flight.origin.code }} → {{ flight.destination.code }}
-              </span>
-              <p>
-                Take off {{ time-from-now flight.take_off }}
-              </p>
-              <p>
-                {{#each compound in flight.compounds }}
-                  {{ compound.name }} 
-                {{/each}}
-              </p>
-            </div>
-          </div>
+        <div class="col s12">
+          <ul class="collection card-like">
+            {{#each flight in flights}}
+            <li class="collection-item">
+              <article class="flight-preview">
+                <header>
+                  <span class="time">
+                    <i class="mdi-device-access-time"></i> {{ format-time flight.take_off }}
+                  </span>
+                  <span class="airports">
+                    <i class="mdi-maps-flight"></i> {{ flight.origin.code }} → {{ flight.destination.code }}
+                  </span>
+                </header>
+                <p>
+                  Take off {{ time-from-now flight.take_off }}
+                </p>
+                <p>
+                  {{#each compound in flight.compounds }}
+                    {{ compound.name }} 
+                  {{/each}}
+                </p>
+              </article>
+            </li>
+            {{/each}}
+          </ul>
         </div>
-        {{/each}}
       </div>
     </div>
   </div>
@@ -95,35 +98,23 @@
       </div>
       <div class="row">
         <div class="col s12">
-          <ul class="card collection">
+          <ul class="collection card-like">
+            {{#each directive in directives}}
             <li class="collection-item">
               <article class="row">
                 <div class="col s2">
-                  <i class="category blue mdi-maps-flight"></i>
+                  <i class="category {{ unbound directive.category }} {{ unbound category-icon directive.category }}"></i>
                 </div>
                 <div class="col s10">
                   <header class="row title">
-                    <span class="col s9 title">Lorem ipsum</span>
-                    <small class="col s3 date right-align">25 dec 08:00</small>
+                    <span class="col s9 title">{{ directive.title }}</span>
+                    <small class="col s3 date right-align">{{ hour-or-date directive.date }}</small>
                   </header>
-                  <p class="body-preview">Lorem ipsum dolor sit amet</p>
+                  <div class="body-preview">{{ directive.body_preview }}</div>
                 </div>
               </article>
             </li>
-            <li class="collection-item">
-              <article class="row">
-                <div class="col s2">
-                  <i class="category amber mdi-device-wifi-tethering"></i>
-                </div>
-                <div class="col s10">
-                  <header class="row title">
-                    <span class="col s9 title">Lorem ipsum</span>
-                    <small class="col s3 date right-align">25 dec 08:00</small>
-                  </header>
-                  <p class="body-preview">Lorem ipsum dolor sit amet</p>
-                </div>
-              </article>
-            </li>
+            {{/each}}
           </ul>
         </div>
       </div>

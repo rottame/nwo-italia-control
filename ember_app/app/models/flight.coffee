@@ -11,7 +11,7 @@ mock_flights = ->
     pilot1 = Math.ceil(Math.random()*50)
     pilot2 = Math.ceil(Math.random()*50)
     pilot2 = Math.ceil(Math.random()*50) if pilot1 == pilot2
-    compounds = for c in [1...Math.ceil(Math.random()*5)]
+    compounds = for c in [1..Math.ceil(Math.random()*3)]
       Math.ceil(Math.random()*7)
     mock = {id: i, origin: orig, destination: dest, pilots: [pilot1, pilot2], compounds: compounds.uniq(), take_off: new Date(start_date.getTime())}
     start_date.setTime(start_date.getTime() + (Math.ceil(Math.random()*30) * 60000)) # add random 1 - 30 minutes to start_date

@@ -1,4 +1,5 @@
 `import Ember from 'ember'`
+`import moment from 'moment'`
 
 formatTime = () ->
   args = Array.prototype.slice.call(arguments, 0, -1)

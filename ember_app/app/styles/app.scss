@@ -72,6 +72,29 @@ section.with-header-image {
 }
 
 
+.chemtrails {
+  background-color: unquote(map-get($blue, base)); 
+}  
+.haarp {
+  background-color: unquote(map-get($amber, base)); 
+} 
+.seignorage {
+  background-color: unquote(map-get($green, base)); 
+}  
+.vaccines {
+  background-color: unquote(map-get($red, base)); 
+}  
+.politics {
+  background-color: unquote(map-get($brown, base)); 
+}  
+.mind-control {
+  background-color: unquote(map-get($lime, base)); 
+} 
+.agents {
+  background-color: unquote(map-get($grey, base)); 
+}  
+
+
 .home-buttons {
   .btn {
     display: block;
@@ -97,33 +120,24 @@ section.with-header-image {
   }
 }
 
-article {
-  &.row {
-    margin-bottom: 0;
-  }
+.collection {
+  &.card-like {
+    @extend .z-depth-1;
+    margin: 8px 0;
 
-  header.row.title {
-    margin-bottom: 0;
-    .title {
-      font-size: 120%;
+    article {
+
+      &.flight-preview {
+        header {
+          font-size: 24px;
+          span {
+            display: block;
+          }          
+        }
+        p {
+          margin: 2px 0;
+        }
+      }
     }
-
-    + p {
-      margin-top: 3px;
-    }
   }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
-
-  .category {
-    display: block;
-    width: 53px;
-    height: 53px;
-    line-height: 53px;
-    text-align: center;
-    font-size: 40px;
-    color: white;
-  }
-}
+} 

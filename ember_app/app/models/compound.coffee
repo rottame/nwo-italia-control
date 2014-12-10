@@ -12,7 +12,7 @@ Compound.reopenClass
     {id: 4, name: 'cobalt',       purpose: 'Sthealting'}
     {id: 5, name: 'morgellons',   purpose: 'Disease'}
     {id: 6, name: 'nanopolymers', purpose: 'Population control'}
-    {id: 7, name: 'nanodwarves',  purpose: 'Those dicks'}
+    {id: 7, name: 'nanonano',     purpose: 'Makes you sit like an idiot'}
   ]
 
 `export default Compound`
