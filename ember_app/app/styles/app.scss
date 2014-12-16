@@ -1,98 +1,118 @@
 @import "../../bower_components/materialize/sass/materialize";
 
-nav {
-  .brand-logo {
-    text-align: left;
-    padding-left: 10px;
-    font-size: 1.4rem;
-    width: calc(100% - 20px)
-  }
+.chemtrails {
+  @extend .blue;
 }
-
-.container {
-  width: 90%;
+.haarp {
+  @extend .amber;
+}
+.seigniorage {
+  @extend .green;
+}
+.vaccines {
+  @extend .red;
+}
+.politics {
+  @extend .brown;
+}
+.mind-control {
+  @extend .lime;
+}
+.agents {
+  @extend .grey;
 }
 
 header {
-  &.fixed {
-    height: 64px;
+  nav {
+    .brand-logo {
+      text-align: left;
+      padding-left: 10px;
+      font-size: 1.4rem;
+      width: calc(100% - 20px)
+    }
+  }
+
+  &.with-header-content {
+    height: 0;
+    position: relative;
 
     nav {
       position: fixed;
       top: 0;
-      z-index: 2;
-    }
-  }
+      left: 0;
+      right: 0;
+      z-index: 10;
 
-  &.fade-in {
-    height: 0; 
-    nav {
-      box-shadow: none;
-      opacity: 0;
+      transition: background-color 250ms linear;
+
+      .brand-logo {
+        transition: opacity 250ms linear;
+      }
+
+      &:not(.opaque) {
+        box-shadow: none;
+
+        &.chemtrails {
+          background-color: rgba(map-get($blue, 'base'), 0) !important;
+        }
+        &.haarp {
+          background-color: rgba(map-get($amber, 'base'), 0) !important;
+        }
+        &.seigniorage {
+          background-color: rgba(map-get($green, 'base'), 0) !important;
+        }
+        &.vaccines {
+          background-color: rgba(map-get($red, 'base'), 0) !important
+        }
+        &.politics {
+          background-color: rgba(map-get($brown, 'base'), 0) !important;
+        }
+        &.mind-control {
+          background-color: rgba(map-get($lime, 'base'), 0) !important;
+        }
+        &.agents {
+          background-color: rgba(map-get($grey, 'base'), 0) !important;
+        }
+
+        .brand-logo {
+          opacity: 0;
+        }
+      }
     }
   }
 }
 
-section.with-header-image {
-  perspective: 1px;
-  perspective-origin: top left;
+.header-content-wrapper {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  position: relative;
-  z-index: 0;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+  perspective-origin: top left;
 
-  > * {
-    &.header-image {
+
+  & > .header-content {
+    overflow: hidden;
+    display: block;
+
+    img {
+      -webkit-transform: translateZ(-1px) scale(2);
       transform: translateZ(-1px) scale(2);
       transform-origin: top left;
+      display: block;
       width: 100%;
-      position: relative;
-      overflow: hidden;
-
-      &:before {
-        content: "";
-        display: block;
-        margin-top: 52.5%;
-      }
-
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-      }
     }
+  }
 
-    &:nth-child(2) {
-      transform: translateZ(0);
-    }
+  section {
+    transform: translateZ(0);
   }
 }
 
 
-.chemtrails {
-  background-color: unquote(map-get($blue, base)); 
-}  
-.haarp {
-  background-color: unquote(map-get($amber, base)); 
-} 
-.seignorage {
-  background-color: unquote(map-get($green, base)); 
-}  
-.vaccines {
-  background-color: unquote(map-get($red, base)); 
-}  
-.politics {
-  background-color: unquote(map-get($brown, base)); 
-}  
-.mind-control {
-  background-color: unquote(map-get($lime, base)); 
-} 
-.agents {
-  background-color: unquote(map-get($grey, base)); 
-}  
+.container {
+  width: 90%;
+}
 
 
 .home-buttons {
@@ -132,7 +152,7 @@ section.with-header-image {
           font-size: 24px;
           span {
             display: block;
-          }          
+          }
         }
         p {
           margin: 2px 0;
@@ -140,4 +160,4 @@ section.with-header-image {
       }
     }
   }
-} 
+}

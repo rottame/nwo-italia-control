@@ -1,4 +1,4 @@
-<header class="fixed">
+<header class="">
   <nav>
     <div class="nav-wrapper indigo">
       <a href="#" class="brand-logo">NWO Italia</a>
@@ -18,8 +18,8 @@
       {{/link-to}}
     </div>
     <div class="col s6 m4">
-      {{#link-to 'seigniorage' class="btn waves-effect waves-light seignorage"}}
-        <i class="{{ unbound category-icon 'seignorage' }} left"></i> Seignorage
+      {{#link-to 'seigniorage' class="btn waves-effect waves-light seigniorage"}}
+        <i class="{{ unbound category-icon 'seigniorage' }} left"></i> Seignorage
       {{/link-to}}
     </div>
     <div class="col s6 m4">
@@ -44,7 +44,7 @@
       <h4>Chemtrails</h4>
     </div>
   </div>
-  
+
   <div class="row no-pad">
     <div class="col s12 l6">
       <div class="row no-pad">
@@ -74,7 +74,7 @@
                 </p>
                 <p>
                   {{#each compound in flight.compounds }}
-                    {{ compound.name }} 
+                    {{ compound.name }}
                   {{/each}}
                 </p>
               </article>

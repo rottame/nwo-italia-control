@@ -9,7 +9,6 @@ app.import('bower_components/string/lib/string.js');
 app.import('bower_components/materialize/bin/materialize.js');
 app.import('bower_components/jquery-color/jquery.color.js');
 app.import('bower_components/jquery-color/jquery.color.svg-names.js');
-app.import('vendor/navbar_fade.js');
 
 var pickFiles = require('broccoli-static-compiler');
 var fonts = pickFiles('bower_components/materialize/font', {

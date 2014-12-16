@@ -2,6 +2,7 @@
 `import Resolver from 'ember/resolver'`
 `import loadInitializers from 'ember/load-initializers'`
 `import config from './config/environment'`
+`import none from './navbar'`
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
@@ -15,8 +16,12 @@ Ember.View.reopen
     @._super()
     Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent)
   afterRenderEvent: ->
-    $('.fade-in').fade_in_nav();
+    # $('.fade-in').fade_in_nav();
 
+Ember.Route.reopen
+  activate: ->
+    @._super()
+    window.scrollTo(0,0);
 
 loadInitializers App, config.modulePrefix
 
