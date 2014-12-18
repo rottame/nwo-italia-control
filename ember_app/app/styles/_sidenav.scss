@@ -6,13 +6,49 @@ aside {
 
     li {
       @include transition(background-color 0.3s);
+      font-size: 1.2rem;
+
+      &.separator {
+        border-bottom: 1px solid #ddd;
+        height: 0;
+        overflow: hidden;
+      }
 
       a {
         -webkit-font-smoothing: antialiased;
-        font-size: 1rem;
         display: block;
         padding: 0px;
-        line-height: 56px;
+        line-height: 40px;
+        height: 40px;
+        overflow: hidden;
+
+        i {
+          font-size: 1.6rem;
+          line-height: 40px;
+          float: left;
+          color: lighten($off-black, 25%);
+          margin-right: 20px;
+        }
+
+        .badge {
+          font-size: 0.95rem;
+          float: right;
+          display: inline-block;
+          min-width: 30px;
+          text-align: center;
+          padding: 0 5px;
+          line-height: 26px;
+          margin-top: 7px;
+          font-weight: bold;
+          @include border-radius(2px);
+
+          &.materialize-red, &.red, &.pink, &.purple, &.deep-purple, &.indigo,
+          &.blue, &.light-blue, &.cyan, &.teal, &.green, &.light-green, &.lime,
+          &.yellow, &.amber, &.orange, &.deep-orange, &.brown, &.blue-grey,
+          &.grey, &.shades {
+            font-weight: normal;
+          }
+        }
       }
 
       &.header {
