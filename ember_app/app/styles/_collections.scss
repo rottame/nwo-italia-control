@@ -1,0 +1,120 @@
+
+.collection {
+  .collection-header {
+    @include border-radius(2px 2px 0 0);
+
+    $ch-h1-fontsize: $h2-fontsize;
+    $ch-h2-fontsize: $h3-fontsize;
+    $ch-h3-fontsize: $h4-fontsize;
+    $ch-h4-fontsize: $h5-fontsize;
+    $ch-h5-fontsize: $h6-fontsize;
+
+    h1 {
+      font-size: $ch-h1-fontsize;
+      line-height: 1.1*$ch-h1-fontsize;
+      margin: ($ch-h1-fontsize / 2) 0 ($ch-h1-fontsize / 2.5) 0;
+      i {
+        font-size: $h1-fontsize;
+      }
+    }
+    h2 {
+      font-size: $ch-h2-fontsize;
+      line-height: 1.1*$ch-h2-fontsize;
+      margin: ($ch-h2-fontsize / 2) 0 ($ch-h2-fontsize / 2.5) 0;
+      i {
+        font-size: $h2-fontsize;
+      }
+    }
+    h3 {
+      font-size: $ch-h3-fontsize;
+      line-height: 1.1*$ch-h3-fontsize;
+      margin: ($ch-h3-fontsize / 2) 0 ($ch-h3-fontsize / 2.5) 0;
+      i {
+        font-size: $h3-fontsize;
+      }
+    }
+    h4 {
+      font-size: $ch-h4-fontsize;
+      line-height: 1.1*$ch-h4-fontsize;
+      margin: ($ch-h4-fontsize / 2) 0 ($ch-h4-fontsize / 2.5) 0;
+      i {
+        font-size: $h4-fontsize;
+      }
+    }
+    h5 {
+      font-size: $ch-h5-fontsize;
+      line-height: 1.1*$ch-h5-fontsize;
+      margin: ($ch-h5-fontsize / 2) 0 ($ch-h5-fontsize / 2.5) 0;
+      i {
+        font-size: $h5-fontsize;
+      }
+    }
+
+    a {
+      color: inherit;
+      i {
+
+      }
+    }
+  }
+
+  &.card-like {
+    @extend .z-depth-1;
+    margin: 8px 0;
+
+    article {
+
+      &.flight-preview {
+        header {
+          font-size: 24px;
+          span {
+            display: block;
+          }
+        }
+        p {
+          margin: 2px 0;
+        }
+      }
+    }
+
+    .collection-item {
+      padding: 10px 15px;
+    }
+  }
+}
+
+
+.collection-item {
+  article {
+    .list-icon {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      ￼background-clip: padding-box;
+      @include border-radius(50%);
+      float: left;
+      margin: 0 10px 10px 0;
+    }
+    i.list-icon {
+      text-align: center;
+      color: white;
+      font-size: 1.6rem;
+    }
+
+    header {
+      .date {
+        float: right;
+        font-size: 80%;
+        color: lighten($off-black, 15%);
+      }
+    }
+
+    .body-preview {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: lighten($off-black, 15%);
+    }
+  }
+}
