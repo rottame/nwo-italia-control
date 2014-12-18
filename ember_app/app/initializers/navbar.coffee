@@ -5,6 +5,10 @@ initialize = () ->
     color = null
 
     init = ->
+      $(".button-collapse:not(.side-nav-connected)").addClass('side-nav-connected').sideNav
+        menuWidth: 300
+        activationWidth: 100
+
       nav = $('header:not(.fixed) nav:not(.monitor-scroll)')
       if $('.header-content-wrapper').is('.header-content-wrapper') && $('.header-content-wrapper').is(':not(.scroll-event-attached)')
         $('.header-content-wrapper').on('scroll', onscroll).addClass('scroll-event-attached')
@@ -38,6 +42,9 @@ initialize = () ->
       else
         newntop = 0
 
+      if newntop + yoffset < 0
+        newntop = yoffset - nheight
+        
       nav.animate {top: newntop}, 300
 
 
@@ -66,6 +73,9 @@ initialize = () ->
         newntop = ntop + delta
         newntop = Math.max(newntop, nheight*-1)
         newntop = Math.min(0, newntop)
+
+      if newntop + yoffset < 0
+        newntop = yoffset - nheight
 
       nav.css {top: newntop}
 

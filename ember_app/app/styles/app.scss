@@ -2,6 +2,15 @@
 @import "_categories";
 @import "_header";
 @import "_collections";
+@import "_sidenav";
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 
 .container {
   width: 90%;

@@ -1,0 +1,52 @@
+aside {
+  ul.side-nav {
+    margin-top: 0;
+    width: 300px;
+    left: -300px;
+
+    li {
+      @include transition(background-color 0.3s);
+
+      a {
+        -webkit-font-smoothing: antialiased;
+        font-size: 1rem;
+        display: block;
+        padding: 0px;
+        line-height: 56px;
+      }
+
+      &.header {
+        display: table;
+        width: calc(100% - 30px);
+        border-bottom: 1px solid #ddd;
+        overflow: hidden;
+        padding: 15px;
+        background-size: cover;
+        margin-bottom: 10px;
+
+        .background {
+          width: 100%;
+        }
+
+        .avatar {
+          display: block;
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          ￼background-clip: padding-box;
+          @include border-radius(50%);
+          margin-bottom: 20px;
+          overflow: hidden;
+
+          img {
+            height: 100%;
+          }
+        }
+
+        .name {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
