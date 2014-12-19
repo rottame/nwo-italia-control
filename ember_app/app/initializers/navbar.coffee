@@ -5,9 +5,11 @@ initialize = () ->
     color = null
 
     init = ->
-      $(".button-collapse:not(.side-nav-connected)").addClass('side-nav-connected').sideNav
-        menuWidth: 300
-        activationWidth: 100
+      if $("aside .side-nav:not(.connected)").is('ul')
+        $("aside .side-nav:not(.connected)").addClass 'connected'
+        $(".button-collapse:not(.side-nav-connected)").sideNav
+          menuWidth: 300
+          activationWidth: 100
 
       nav = $('header:not(.fixed) nav:not(.monitor-scroll)')
       if $('.header-content-wrapper').is('.header-content-wrapper') && $('.header-content-wrapper').is(':not(.scroll-event-attached)')
@@ -18,8 +20,8 @@ initialize = () ->
         nav.addClass('monitor-scroll')
         nheight = nav.outerHeight(true)
 
-        unless hdr.is('.with-header-content')
-          nav.parent().css({height: nheight});
+        #unless hdr.is('.with-header-content')
+        #  nav.parent().css({height: nheight});
 
         nav.css({position: 'fixed', left: 0, right: 0, zIndex: 10})
 

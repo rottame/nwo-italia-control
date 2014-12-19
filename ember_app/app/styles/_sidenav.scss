@@ -21,12 +21,13 @@ aside {
         line-height: 40px;
         height: 40px;
         overflow: hidden;
+        color: $off-black;
 
         i {
           font-size: 1.6rem;
           line-height: 40px;
           float: left;
-          color: lighten($off-black, 25%);
+          color: lighten($off-black, 35%);
           margin-right: 20px;
         }
 

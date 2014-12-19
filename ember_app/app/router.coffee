@@ -5,12 +5,15 @@ Router = Ember.Router.extend
   location: config.locationType
 
 Router.map ->
-  @route 'chemtrails'
   @route 'seigniorage'
   @route 'mind-control'
   @route 'vaccines'
   @route 'politics'
   @route 'agents'
   @route 'haarp'
+  @route 'chemtrails', ->
+    @resource 'flights', ->
+      @route 'show', path: ':id'
+
 
 `export default Router`

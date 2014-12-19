@@ -1,0 +1,20 @@
+              {{#link-to 'flights.show' model }}
+              <article class="flight-preview">
+                <header>
+                  <span class="time">
+                    <i class="mdi-device-access-time"></i> {{ format-time take_off }}
+                  </span>
+                  <span class="airports">
+                    <i class="mdi-maps-flight"></i> {{ origin.code }} → {{ destination.code }}
+                  </span>
+                </header>
+                <p class="take-off">
+                  Take off {{ time-from-now take_off }}
+                </p>
+                <p class="compounds">
+                  {{#each compound in compounds }}
+                    {{ compound.name }}&nbsp;
+                  {{/each}}
+                </p>
+              </article>
+              {{/link-to}}

@@ -1,20 +1,18 @@
-<header {{bind-attr class="has_header_image:with-header-content"}}>
-  <nav {{bind-attr class="category"}}>
+<header class="with-header-content">
+  <nav class="chemtrails">
     <div class="container">
       <div class="nav-wrapper">
         <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-        <a href="#" class="brand-logo">{{ title }}</a>
+        <a href="#" class="brand-logo">Chemtrails</a>
       </div>
     </div>
   </nav>
 </header>
 {{ partial '_menu' }}
-<div {{bind-attr class="has_header_image:header-content-wrapper :body-wrapper"}}>
-  {{#if has_header_image}}
+<div class="header-content-wrapper">
   <div class="header-content height-50">
-    <img {{bind-attr src="header_image"}} />
+    <img src="images/chemtrails-med.png" />
   </div>
-  {{/if}}
   <section class="white">
     <div class="container">
       {{outlet}}

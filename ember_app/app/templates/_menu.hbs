@@ -1,0 +1,41 @@
+<aside>
+  <ul id="nav-mobile" class="right side-nav">
+    <li class="header white-text" style="background-image: url(images/haarp-small.png)">
+      <div class="avatar">
+        <img src="images/chemtrails-xsmall.png" />
+      </div>
+      <div class="name">{{ current_agent.full_name }}</div>
+      <div clas="extra">{{ current_agent.username }}</div>
+    </li>
+    {{#menu-item}}{{#link-to 'index'}}<i class="mdi-action-visibility"></i> NWO Italia home{{/link-to}}{{/menu-item}}
+    {{#if is_index }}
+    {{#menu-item}}{{#link-to 'flights'}}<i class="{{ unbound category-icon 'chemtrails' }}"></i> My sprayings{{/link-to}}{{/menu-item}}
+    {{#menu-item}}{{#link-to 'haarp'}}<i class="{{ unbound category-icon 'haarp' }}"></i> My irradiations{{/link-to}}{{/menu-item}}
+    {{#menu-item}}{{#link-to 'agents'}}<i class="mdi-action-announcement"></i> Directives <span class="badge blue white-text">5 unread</span>{{/link-to}}{{/menu-item}}
+    {{/if}}
+    {{#if is_chemtrails }}
+    {{ partial 'chemtrails/_menu' }}
+    {{/if}}
+    {{#if is_haarp }}
+    {{ partial 'haarp/_menu' }}
+    {{/if}}
+    {{#if is_seigniorage }}
+    {{ partial 'seigniorage/_menu' }}
+    {{/if}}
+    {{#if is_vaccines }}
+    {{ partial 'vaccines/_menu' }}
+    {{/if}}
+    {{#if is_politics }}
+    {{ partial 'politics/_menu' }}
+    {{/if}}
+    {{#if is_mind_control }}
+    {{ partial 'mind-control/_menu' }}
+    {{/if}}
+    {{#if is_agents }}
+    {{ partial '/agents_menu' }}
+    {{/if}}
+    <li class="separator"></li>
+    <li><a href="#"><i class="mdi-action-account-box"></i> My profile</a></li>
+    <li><a href="#">Settings</a></li>
+  </ul>
+</aside>
